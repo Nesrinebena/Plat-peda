@@ -60,7 +60,7 @@ header {
 .header-title-background {
     background-image:
         linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), /* Calque sombre pour le contraste du texte */
-        url('/home/nesrine/Image.png'); /* Votre image de fond */
+        url('Image.png'); /* Votre image de fond */
     background-size: cover;
     background-position: center;
     padding: 60px 0; /* Espacement intérieur pour le texte */
