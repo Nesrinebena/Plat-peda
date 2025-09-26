@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan de Travail - Chapitre 1: Performances Logicielles</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="project-header">
+        <div class="header-container">
+            
+
+            <!-- Logo positionné à droite -->
+            <div class="header-logo-right">
+                <img src="/home/nesrine/USTHB.png" alt="Logo USTHB" class="logo">
+            </div>
+            
+       <div class="dropdown-menu-wrapper">
+    <button class="home-button" title="home">
+         <a href="index.html"> <i class="fas fa-home"></i></a>
+    </button>
+  
+</div>
+   
+</div>
+
+            <!-- Arrière-plan du titre avec image et texte -->
+            <div class="header-title-background project-title-background">
+                <div class="container header-text-content">
+                    <h1>Plan de Travail </h1>
+
+                    <p class="project-info">Les méthodes d'optimisation des performances logicielles</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="project-main">
+        <section id="definition-performance" class="project-section intro-section">
+            <div class="container">
+                <h2>Chapitre 01: Définition des methode d'optimisation et de system de recommandation</h2>
+                <!-- <p>La performance logicielle est un aspect critique dans le développement d'applications, particulièrement dans le domaine du Calcul Haute Performance (HPC) et de l'Intelligence Artificielle. Elle se réfère à la réactivité, la vitesse, la scalabilité et l'efficacité d'un système ou d'une application dans l'exécution de ses tâches.</p> -->
+                <h3>1.0. Introduction</h3>
+                <h3>1.1. Définition des Méthodes d'Optimisation</h3>
+                <ul>
+                    <li><strong>Optimisation liée au problème de big data  :</strong> Techniques visant à améliorer la qualité et l'efficacité du code source.</li>
+                    <li><strong>Optimisation des Algorithmes :</strong> Amélioration des performances des algorithmes utilisés dans l'application.</li>
+                    <li><strong>Optimisation des Ressources :</strong> Gestion efficace des ressources matérielles et logicielles.</li>
+                </ul>
+                <h3>1.2. Les Mesures de Performance</h3>
+                <!-- <p>Pour évaluer la performance, plusieurs métriques sont utilisées :</p> -->
+                <ul>
+                    <li><strong>Temps d'exécution </strong> </li>
+                    <li><strong>Débit (Throughput) </strong> </li>
+                    <li><strong>Latence (Latency) </strong>  </li>
+                    <li><strong>Utilisation des ressources (Resource Utilization) </strong> </li>
+                    <li><strong>Scalabilité (Scalability)</strong> </li>
+                </ul>
+                <!-- <p>Un temps d'exécution excessivement long est le symptôme le plus courant d'un problème de performance. Les causes peuvent être multiples et souvent interconnectées, nécessitant une analyse approfondie pour identifier la racine du problème.</p> -->
+            </div>
+        </section>
+
+        <section id="causes-lenteur" class="project-section">
+            <div class="container">
+                <h2>2. Les Causes Majeures de Lenteur du Temps d'Exécution</h2>
+                <!-- <p>Les goulots d'étranglement de performance peuvent être classifiés en plusieurs catégories principales, chacune ayant des caractéristiques distinctes et nécessitant des stratégies d'optimisation spécifiques.</p> -->
+
+                <div class="steps-grid">
+                    <div class="step-item">
+            
+                        <h4>2.1. Calcul Intensif (CPU-bound / Compute-bound)</h4>
+                        <!-- <p>Ce type de problème survient lorsque le temps d'exécution est principalement limité par la puissance de calcul du processeur. Les applications effectuent un grand nombre d'opérations arithmétiques ou logiques, souvent dans des boucles serrées ou des algorithmes complexes qui saturent les unités de calcul.</p> -->
+                        <p><strong>Caractéristiques :</strong> </p>
+                    </div>
+                    <div class="step-item">
+                        
+                        <h4>2.2. Big Data (I/O-bound / Data-bound)</h4>
+                        <!-- <p>Un problème de Big Data se manifeste lorsque le goulot d'étranglement est lié à la manipulation de volumes massifs de données. Le temps est principalement passé à lire, écrire, transférer ou traiter des données qui dépassent les capacités des systèmes de stockage ou des bandes passantes réseau.</p> -->
+                        <p><strong>Caractéristiques :</strong></p>
+                    </div>
+                    <div class="step-item">
+                        
+                        <h4>2.3. Complexité Algorithmique</h4>
+                        <!-- <p>Ce problème est inhérent à la conception de l'algorithme lui-même. Si la complexité temporelle ou spatiale de l'algorithme est élevée (par exemple, $O(n^2)$, $O(n^3)$, $O(2^n)$), le temps d'exécution augmentera de manière non linéaire avec la taille des données d'entrée, même pour des volumes modérés.</p> -->
+                        <p><strong>Caractéristiques :</strong> </p>
+                    </div>
+                </div>
+               
+            </div>
+        </section>
+
+        <section id="diagnostic-problems" class="project-section">
+            <div class="container">
+                <h2>3. Diagnostic des Problèmes de Temps d'Exécution</h2>
+                  </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>2025 Projets PFE - Optimisation Automatique</p>
+            <p>BENADJAL.N Doctorante en Informatique</p>
+            <p>Email: nesrinebenadjel63@gmail.com</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

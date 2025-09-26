@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Remise de travail</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Remise de Travail - M2 HPC</h1>
+
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+        <label for="name">Nom et prénom :</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="description">Description du travail :</label><br>
+        <textarea id="description" name="description" rows="4" cols="50"></textarea><br><br>
+
+        <label for="file">Fichier à envoyer :</label><br>
+        <input type="file" id="file" name="file" required><br><br>
+
+        <input type="submit" value="Envoyer le travail">
+    </form>
+     <footer>
+        <div class="container">
+            <p>2025 Projets PFE - Optimisation Automatique</p>
+            <p>BENADJAL.N Doctorante en Informatique</p>
+            <p>Email: nesrinebenadjel63@gmail.com</p>
+        </div>
+    </footer>
+</body>
+
+</html>

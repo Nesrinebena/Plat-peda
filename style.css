@@ -1,0 +1,434 @@
+/* Variables pour les couleurs */
+:root {
+    --primary-color: #270730; /* Bleu vif pour les accents */
+    --secondary-color: #6c757d; /* Gris pour le texte secondaire */
+    --background-dark: #212529; /* Arrière-plan sombre */
+    --background-light: #f8f9fa; /* Arrière-plan clair */
+    --text-color-dark: #e9ecef; /* Texte clair sur fond sombre */
+    --text-color-light: #343a40; /* Texte sombre sur fond clair */
+    --card-background: #ffffff; /* Fond des cartes */
+    --border-color: #dee2e6; /* Couleur des bordures */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--text-color-light);
+    background-color: var(--background-light);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* En-tête */
+header {
+    background-color: var(--background-dark); /* Couleur de fond de l'en-tête global */
+    color: var(--text-color-dark);
+    padding-bottom: 20px; /* Espace en bas de l'en-tête */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; /* Nécessaire pour positionner le logo absolument à l'intérieur */
+    overflow: hidden; /* S'assure que rien ne déborde */
+}
+
+.header-container {
+    position: relative; /* Conteneur pour le positionnement du logo */
+    width: 100%;
+}
+
+/* Positionnement du logo en haut à droite */
+.header-logo-right {
+    position: absolute;
+    top: 20px; /* Distance du haut */
+    right: 30px; /* Distance de la droite */
+    z-index: 100; /* S'assure que le logo est au-dessus des autres éléments */
+}
+
+.header-logo-right .logo {
+    max-height: 80px; /* Taille du logo */
+    width: auto;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.932)); /* Ombre pour un effet moderne */
+}
+
+
+/* Arrière-plan du titre avec image */
+.header-title-background {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), /* Calque sombre pour le contraste du texte */
+        url('/home/nesrine/Image.png'); /* Votre image de fond */
+    background-size: cover;
+    background-position: center;
+    padding: 60px 0; /* Espacement intérieur pour le texte */
+    text-align: center;
+    animation: fadeInBackground 2s ease-out; /* Animation pour l'apparition de l'image */
+}
+
+@keyframes fadeInBackground {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.header-text-content {
+    /* Assurez-vous que le texte est bien centré et lisible sur l'image */
+    position: relative;
+    z-index: 1;
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Ombre pour le texte sur l'image */
+}
+
+header .highlight {
+    color: var(--primary-color);
+}
+
+header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Section Héro (Introduction) - légèrement ajustée pour la continuité visuelle */
+.hero-section {
+    background: linear-gradient(135deg, #f8f8f8 0%, #3a054e 100%); /* Un dégradé de gris-bleu plus profond */
+    color: var(--text-color-dark);
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Effet visuel pour l'IA/Optimisation dans la section héro */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    right: -50px;
+    bottom: -50px;
+    background: radial-gradient(circle at center, rgba(242, 242, 243, 0.973) 0%, transparent 70%); /* Plus visible */
+    opacity: 0.6; /* Plus opaque */
+    animation: rotateBackground 25s infinite linear; /* Plus lent et subtil */
+}
+
+@keyframes rotateBackground {
+    from {
+        transform: rotate(0deg) scale(1);
+    }
+    to {
+        transform: rotate(360deg) scale(1.05); /* Légère animation de zoom */
+    }
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-section h2 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.hero-section p {
+    font-size: 1.3em;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+}
+
+.project-selection {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.project-button {
+    background-color: var(--primary-color);
+    color: var(--text-color-dark);
+    border: none;
+    padding: 18px 35px;
+    font-size: 1.1em;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 10px rgba(50, 5, 71, 0.3);
+}
+
+.project-button:hover {
+    background-color: #290631;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(50, 5, 71, 0.3);
+}
+
+.project-button i {
+    font-size: 1.3em;
+}
+
+/* Section "À Propos" / Mission */
+.about-section {
+    padding: 60px 0;
+    text-align: center;
+    background-color: var(--background-light);
+    color: var(--text-color-light);
+}
+
+.about-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.about-section p {
+    font-size: 1.1em;
+    max-width: 900px;
+    margin: 0 auto 50px auto;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.feature-item {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 30px;
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.feature-item i {
+    font-size: 3.5em;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.feature-item h3 {
+    font-size: 1.6em;
+    margin-bottom: 15px;
+    color: var(--text-color-light);
+    font-weight: 600;
+}
+
+.feature-item p {
+    font-size: 0.95em;
+    color: var(--secondary-color);
+}
+
+/* Pied de page */
+footer {
+    background-color: var(--background-dark);
+    color: var(--text-color-dark);
+    text-align: center;
+    padding: 25px 0;
+    font-size: 0.9em;
+    margin-top: 50px;
+}
+
+/* Animations (inchangées) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-logo-right {
+        position: static; /* Le logo reprend sa place normale dans le flux */
+        text-align: center;
+        margin-bottom: 20px; /* Espace sous le logo quand il est empilé */
+    }
+
+    .header-logo-right .logo {
+        max-height: 70px; /* Taille ajustée pour les petits écrans */
+    }
+
+    .header-title-background {
+        padding: 40px 0; /* Réduit le padding sur les petits écrans */
+    }
+
+    header h1 {
+        font-size: 2.2em;
+    }
+    header p {
+        font-size: 1em;
+    }
+
+    .hero-section h2 {
+        font-size: 2em;
+    }
+
+    .project-selection {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-button {
+        width: 80%;
+        max-width: 350px;
+    }
+
+    .about-section h2 {
+        font-size: 2em;
+    }
+
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-item {
+        width: 90%;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .hero-section h2 {
+        font-size: 1.6em;
+    }
+
+    .project-button {
+        padding: 15px 25px;
+        font-size: 1em;
+    }
+}
+.dropdown-menu-wrapper {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 100;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #000;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    list-style: none;
+    padding: 5px 0;
+    margin: 0;
+    width: 180px;
+}
+
+.dropdown-menu li {
+    padding: 8px 12px;
+}
+
+.dropdown-menu li:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+.dropdown-menu-wrapper {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 100;
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color:  #f0f0f0;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(253, 253, 253, 0.959);
+    list-style: none;
+    padding: 5px 0;
+    margin: 0;
+    width: 180px;
+}
+
+.dropdown-menu li {
+    padding: 8px 12px;
+}
+
+.dropdown-menu li:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown-menu li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}

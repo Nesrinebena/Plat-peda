@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet 1: Classification des Problèmes de Performance - M2 HPC USTHB</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+     
+    <header class="project-header">
+         <div class="header-logo-right">
+        <img src="/home/nesrine/USTHB.png" alt="Logo USTHB" class="logo">
+    </div>
+        <div class="dropdown-menu-wrapper">
+    <button class="menu-button" title="Menu">
+        <i class="fas fa-ellipsis-v"></i>
+    </button>
+    <ul class="dropdown-menu">
+        <li><a href="index.html">Retour d'accueil</a></li>
+        <li><a href="plan.html">Plan de travail</a></li>
+    </ul>
+</div>
+
+
+            <div class="header-title-background project-title-background">
+                <div class="container header-text-content">
+                    <h1>Projet 1: Classification des Problèmes de Performance logiciel</h1>
+
+                    <p>Pour les étudiants en M2 HPC - Faculté d'Informatique, Université USTHB </p>
+                    <p >Encadré par BENADJAL Nesrine </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="project-main">
+        <section id="introduction" class="project-section intro-section">
+            <div class="container">
+                <h2>1. Contexte et Motivation</h2>
+                <p>Aujourd'hui, les informaticiens et ingénieurs logiciels sont constamment confrontés au défi d'améliorer les performances de leurs applications, notamment en optimisant les temps d'exécution. Cet aspect est crucial non seulement pour l'expérience utilisateur, mais aussi pour maîtriser les coûts de développement et d'infrastructure. Dans le domaine du calcul haute performance (HPC), ce défi est amplifié par la manipulation de volumes de données massifs, la complexité croissante des algorithmes et l'évolution rapide des architectures matérielles. Des temps d'exécution excessivement longs sont devenus monnaie courante, soulignant l'urgence de solutions efficaces.</p>
+                <div class="image-placeholder">
+                    <!-- Image représentant le HPC et la performance -->
+                    <img src="/home/nesrine/image2.png" alt="Illustration HPC Performance">
+                    <p class="image-caption">Illustration: L'importance de l'optimisation en HPC.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="problematic" class="project-section">
+            <div class="container">
+                <h2>2. Problématique</h2>
+                <p>Le problème majeur réside dans la difficulté à diagnostiquer précisément la nature des goulots d'étranglement de performance. Très souvent, malgré des efforts d'optimisation ou de parallélisation, les performances restent sous-optimales ou se dégradent avec le temps. Cela est principalement dû à une mauvaise détection de la cause racine du ralentissement. Les développeurs tendent à appliquer des méthodes d'optimisation génériques sans savoir si elles sont réellement adaptées au problème spécifique de leur code.</p>
+                <p>Par exemple, un code peut souffrir d'un temps d'exécution long même avec de petites quantités de données, si sa complexité algorithmique est élevée. Inversement, un code simple peut être ralenti par le traitement de volumes de données massifs, relevant alors d'un problème de Big Data. Plus complexe encore, certains cas combinent les deux : un volume de données très grand et un code complexe, ce qui peut indiquer un problème de calcul intensif nécessitant des techniques d'optimisation spécialisées. Il est crucial de comprendre que le volume seul ne définit pas un problème de Big Data, ni la complexité seule un problème de complexité; c'est l'interaction de ces facteurs qui détermine la nature exacte du goulot d'étranglement.</p>
+                <p>Actuellement, l'analyse pour identifier ces causes est un processus manuel, fastidieux et exigeant une expertise approfondie. Il n'existe pas d'outil systématique permettant aux développeurs de classifier rapidement et avec précision le type de problème de performance auquel leur code est confronté. Ce manque d'outils de diagnostic efficaces entraîne des cycles d'optimisation longs et inefficaces, gaspillant des ressources et retardant les projets.</p>
+            </div>
+        </section>
+
+        <section id="objectives" class="project-section">
+            <div class="container">
+                <h2>3. Objectifs du Projet</h2>
+                <p>Ce projet vise à développer une plateforme interactive innovante qui simplifiera et accélérera le processus de détection et de classification des problèmes de performance pour les développeurs, en les aidant à comprendre la cause racine de l'augmentation des temps d'exécution. Les objectifs spécifiques sont les suivants:</p>
+                <ul>
+                    <li>Concevoir et implémenter une architecture de plateforme web interactive pour la classification des problèmes de performance.</li>
+                    <li>Définir et collecter un ensemble de données d'entraînement représentatif, décrivant les caractéristiques de codes, les problèmes de performance rencontrés et leur classification (Big Data, Complexité, Calcul Intensif, etc.).</li>
+                    <li>Développer un modèle de Deep Learning, capable de mesurer la similarité entre les caractéristiques d'un nouveau code et celles des codes du jeu de données d'entraînement pour la classification.</li>
+                    <li>Évaluer l'efficacité de la plateforme en termes de précision de la classification et de rapidité du diagnostic sur des codes tests.</li>
+                    <li>Proposer une interface utilisateur intuitive permettant aux développeurs d'interagir avec le système et d'obtenir des classifications précises.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="approach" class="project-section">
+            <div class="container">
+                <h2>4. Approche Proposée: Plateforme Web de Classification basée sur le Deep Learning</h2>
+                <p>L'idée centrale de ce projet est de développer une plateforme web qui automatise et facilite la classification des problèmes de performance. Cette plateforme prendra en entrée les caractéristiques pertinentes d'un code logiciel et, en sortie, identifiera le type de problème qui cause son temps d'exécution prolongé (Big Data, Complexité algorithmique, Calcul Intensif, etc.). Une fois la cause identifiée, les développeurs pourront plus facilement trouver la solution d'optimisation adéquate.</p>
+                <h3>Les étapes du travail:</h3>
+                <div class="steps-grid">
+                    <div class="step-item">
+                        <i class="fas fa-database"></i>
+                        <h4>Collecte de Données et Constitution du Dataset</h4>
+                        <p>Une base de données sera constituée, contenant des "instances" de codes. Chaque instance décrira un code par un ensemble de caractéristiques (par exemple, volume de données traitées (en Go), vitesse de traitement, variété des données, nombre de sources de données, complexité algorithmique, temps d'exécution observé, utilisation des ressources, scalabilité du code, types d'algorithmes utilisés comme DFS, BFS, traitement du langage naturel, traitement d'image, multiplication matricielle, etc.). Ces instances seront classifiées selon le type de problème de performance qu'elles présentent (Big Data, Complexité, Calcul Intensif). La collecte se fera en se basant sur les définitions précises de chaque type de problème et en explorant des domaines où les logiciels rencontrent des temps d'exécution longs. Des formulaires pourront être préparés et envoyés à des centres de recherche pour enrichir cette base de données.</p>
+                    </div>
+                    <div class="step-item">
+                        <i class="fas fa-filter"></i>
+                        <h4>Prétraitement des Données</h4>
+                        <p>Cette étape cruciale consiste à préparer les données brutes pour l'entraînement du modèle. Elle inclura la normalisation et la standardisation des attributs numériques, le nettoyage des données pour gérer les valeurs manquantes ou aberrantes, la suppression des doublons, la vérification de la cohérence entre les attributs, et l'assurance de la fiabilité et de la validité du dataset pour un entraînement robuste du modèle.</p>
+                    </div>
+                    <div class="step-item">
+                        <i class="fas fa-brain"></i>
+                        <h4>Modèle de Deep Learning pour la Classification</h4>
+                        <p>Un modèle de Deep Learning sera entraîné sur ce dataset préparé. Nous explorerons des techniques de Deep Learning (comme les CNNS, RNNs ou Transformers) pour "apprendre" les relations complexes entre les caractéristiques d'un code et la classification de son problème de performance. Le modèle sera capable de calculer la similarité entre un nouveau code (décrit par ses caractéristiques) et les instances de la base de données pour effectuer une classification précise.</p>
+                    </div>
+                    <div class="step-item">
+                        <i class="fas fa-globe"></i>
+                        <h4>Plateforme Web Interactive</h4>
+                        <p>Une application web sera développée pour servir d'interface utilisateur. Cette interface permettra aux développeurs de saisir les caractéristiques de leur code via des champs dédiés. En sortie, la plateforme affichera la classification du problème (par exemple, "Problème de Big Data", "Problème de Complexité", "Problème de Calcul Intensif"), offrant ainsi un diagnostic rapide et fiable.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="methodology" class="project-section">
+            <div class="container">
+                <h2>5. Méthodologie</h2>
+                <ol class="methodology-list">
+                    <li>
+                        <h3>Analyse Préliminaire et État de l'Art</h3>
+                        <p>Étude approfondie des différentes catégories de problèmes de performance en HPC (Big Data, complexité, calcul intensif), des méthodes de collecte de caractéristiques de code, et des techniques de Deep Learning appliquées à la classification et à l'analyse de données complexes.</p>
+                    </li>
+                    <li>
+                        <h3>Collecte, Constitution et Prétraitement du Dataset</h3>
+                        <ul>
+                            <li>Définition détaillée des caractéristiques pertinentes pour décrire un code et son environnement d'exécution.</li>
+                            <li>Conception d'un schéma de base de données pour stocker les instances de codes et leurs classifications.</li>
+                            <li>Collecte des données par génération synthétique basée sur les définitions des problèmes, et/ou par collaboration avec des centres de recherche via des formulaires structurés.</li>
+                            <li>Application des étapes de prétraitement: normalisation, standardisation, nettoyage des données (gestion des valeurs manquantes/aberrantes), suppression des doublons, vérification de la cohérence et validation de la stabilité du dataset.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>Conception et Entraînement du Modèle de Deep Learning</h3>
+                        <ul>
+                            <li>Choix de l'architecture de Deep Learning la plus adaptée pour la tâche de classification multiclasse.</li>
+                            <li>Développement du modèle, entraînement sur le dataset prétraité et optimisation de ses hyperparamètres.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>Développement de la Plateforme Web</h3>
+                        <ul>
+                            <li>Conception de l'architecture de l'application web (frontend, backend, intégration du modèle DL).</li>
+                            <li>Implémentation de l'interface utilisateur pour la saisie des caractéristiques et l'affichage des résultats de classification.</li>
+                            <li>Intégration du modèle de Deep Learning entraîné dans la plateforme.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>Évaluation et Validation</h3>
+                        <ul>
+                            <li>Définition de métriques d'évaluation pertinentes pour la classification (précision, rappel, Fl-score) et pour l'utilisabilité de la plateforme.</li>
+                            <li>Test de la plateforme sur de nouveaux codes pour valider sa capacité à classifier correctement les problèmes de performance.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h3>Déploiement (prototype)</h3>
+                        <p>Mise en place d'un prototype fonctionnel de la plateforme web.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="expected-results" class="project-section">
+            <div class="container">
+                <h2>6. Résultats Attendus</h2>
+                <p>À l'issue de ce projet, nous attendons :</p>
+                <ul>
+                    <li>Un dataset structuré et prétraité de codes et de leurs problèmes de performance classifiés.</li>
+                    <li>Un modèle de Deep Learning entraîné capable de classifier avec précision les goulots d'étranglement de performance.</li>
+                    <li>Une plateforme web interactive et accessible permettant aux développeurs de diagnostiquer rapidement les problèmes de performance de leurs codes.</li>
+                    <li>Une démonstration de l'efficacité de la plateforme à réduire le temps de diagnostic et à orienter vers des solutions d'optimisation pertinentes.</li>
+                    <li>Une contribution significative à la simplification du processus d'optimisation pour les développeurs HPC.</li>
+                </ul>
+                
+            </div>
+        </section>
+
+        <section id="keywords" class="project-section keywords-section">
+            <div class="container">
+                <h2>7. Mots Clés</h2>
+                <div class="keywords-list">
+                    <span>HPC, </span>
+                    <span>Optimisation de Performance, </span>
+                    <span>Big Data, </span>
+                    <span>Complexité Algorithmique, </span>
+                    <span>Calcul Intensif, </span>
+                    <span>Deep Learning, </span>
+                    <span>Classification</span>
+                    <span>Plateforme Web</span>
+                    <span>Analyse de Code</span>
+                    <span>Parallélisation</span>
+                    <span>Calcul Distribué</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>2025 Projets PFE - Optimisation Automatique</p>
+            <p>BENADJAL.N Doctorante en Informatique</p>
+            <p>Email: nesrinebenadjel63@gmail.com</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

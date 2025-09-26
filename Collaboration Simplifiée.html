@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaboration Simplifiée - Projets PFE</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <!-- Bouton Home positionné à gauche -->
+                 <div class="dropdown-menu-wrapper">
+    <button class="home-button" title="home">
+         <a href="index.html"> <i class="fas fa-home"></i></a>
+    </button>
+  
+</div>
+
+            <!-- Logo positionné à droite -->
+            <div class="header-logo-right">
+                <img src="/home/nesrine/USTHB.png" alt="Logo USTHB" class="logo">
+            </div>
+
+            <!-- Arrière-plan du titre avec image et texte -->
+            <div class="header-title-background">
+                <div class="container header-text-content">
+                    <h1>Espace de Collaboration Simplifiée</h1>
+                    <p>Remise des travaux et partage de remarques</p>
+                    <p class="project-info">Cette plateforme vous offre deux options pour interagir avec l'équipe d'encadrement.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="project-main">
+        <section id="collaboration-options" class="project-section">
+            <div class="container">
+                <h2>Choisissez votre action</h2>
+                <div class="options-container">
+                    <div class="option-item">
+                        <div class="option-text">
+                            <h3>Soumettre votre Travail</h3>
+                            <p>Utilisez ce bouton pour déposer votre travail (rapport, code, etc.) au format PDF. Assurez-vous d'inclure toutes les pièces nécessaires.</p>
+                        </div>
+                        <button class="collaboration-button icon-button" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSfMaX7cbRj09a8WgQaaNFxbrfmC44Ri_xuYno7N4OzD4PUZHQ/viewform?usp=header'">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </button>
+                    </div>
+                    <div class="option-item">
+                        <div class="option-text">
+                            <h3>Envoyer une Remarque</h3>
+                            <p>Cliquez ici pour rédiger un message ou une question directement à l'encadrant. Partagez vos réflexions ou demandez de l'aide sur un point précis.</p>
+                        </div>
+                        <button class="collaboration-button icon-button" onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSfiCYcf1Qu3LlBl6dhQEPxh-T8GJNR6Z7J0nIYymyHuIhHGsQ/viewform?usp=header'">
+                            <i class="fas fa-comment-dots"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+ <footer>
+        <div class="container">
+            <p>2025 Projets PFE - Optimisation Automatique</p>
+            <p>BENADJAL.N Doctorante en Informatique</p>
+            <p>Email: nesrinebenadjel63@gmail.com</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
